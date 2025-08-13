@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* element style */
+        div {
+            margin: auto;
+        }
+
+        .main {
+            color: rgb(243, 243, 243);
+            background-color: rgb(33, 34, 39);
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .tittle {
+            color: rgb(254, 231, 255);
+            text-align: center;
+        }
+
+        .textBox {
+            background-color: rgb(149, 16, 167);
+            color: black;
+            padding: 2%;
+            margin: 15px auto;
+            border: 5px solid rgb(96, 31, 116);
+            border-radius: 3em;
+            width: 80%;
+        }
+
+        .sampleBox {
+            background-color: white;
+            color: black;
+            padding: 2px;
+            border: 8px solid black;
+            border-radius: 5em;
+            width: 75%;
+            text-align: center;
+        }
+
+        .textBoxTittle {
+            color: white;
+            font-size: 30px;
+        }
+
+        .textBoxText {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .rabbit {
+            color:green;
+            font-family: cursive;
+            background-color: whitesmoke;
+            border-radius: 100em;
+            font-size: 30px;
+        }
+        .duck {
+            color:orange;
+            font-family: 'Times New Roman';
+            background-color: whitesmoke;
+            border-radius: 100em;
+            font-size: 30px;
+        }
+
+        #hunter {
+            background-color: rgba(137, 43, 226, 0.555);
+            padding: 5%;
+            margin: 20px auto;
+            border: 5px solid purple;
+            border-radius: 1em;
+            width: 200px;
+        }
+
+        .numberBox{
+            background-color: rgba(137, 43, 226, 0.555);
+            padding: 5%;
+            margin: 20px auto;
+            border: 5px solid purple;
+            border-radius: 1em;
+            width: 200px;
+            font-size: 60px;
+        }
+
+
+
+    </style>
+</head>
+
+<body class="main">
+    <h1 class="tittle">Objects and Properties</h1>
+
+    <section class="textBox">
+        <h2 class="textBoxTittle">Text lines</h2>
+
+        <h3 class="textBoxText">headings</h3>
+        <div class="sampleBox">
+            <h1>Heading object H1</h1>
+            <h2>Heading object H2</h2>
+            <h3>Heading object H3</h3>
+            <h4>Heading object H4</h4>
+            <h5>Heading object H5</h5>
+            <h6>Heading object H6</h6>
+            <h>Heading object H</h>
+        </div>
+        <p class="textBoxText">(h#) objects hold style info by default on most browsers</p>
+        <br>
+
+        <h3 class="textBoxText">paragraphs</h3>
+        <div class="sampleBox">
+            <p>
+                (p) is a simple text holder
+            </p>
+        </div>
+    </section>
+
+    <br>
+
+    <section class="textBox">
+        <h2 class="textBoxTittle">Lists & tables</h2>
+
+        <h3 class="textBoxText">lists</h3>
+        <div class="sampleBox">
+            <h2>ordered list (ol > li)</h3>
+            <ol>
+                <li>entry one</li>
+                <li>entry two</li>
+            </ol>
+
+            <h2>unorderd list (ul > li)</h3>
+            <ul>
+                <li>entry one</li>
+                <li>entry two</li>
+            </ul>
+        </div>
+        <p class="textBoxText">style sheet can be used to chage the symbol shown on list entries</p>
+        <br>
+
+        <h3 class="textBoxText">tables</h3>
+        <div class="sampleBox">
+            <h2>tables (tables > tr > th)</h2>
+            <table style="margin: auto;">
+                <tr>
+                    <th>first</th>
+                    <th>result</th>
+                </tr>
+                <tr>
+                    <th>second</th>
+                    <th>position</th>
+                </tr>
+                <tr>
+                    <th>third</th>
+                    <th>entry</th>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <br>
+
+    <section class="textBox">
+        <h2 class="textBoxTittle">functional</h2>
+
+        <h3 class="textBoxText">Buttons</h3>
+        <div class="sampleBox">
+            <button>does nothing</button>
+            <br>
+
+            <div id="hunter">
+                <h1 id="season" class="rabbit">RABBIT SEASON!</h1>
+                <button onClick="hunting()">ripp</button>
+            </div>
+            <br>
+            <button>alert!</button>
+        </div>
+        <br>
+
+        <h3 class="textBoxText">Random</h3>
+        <div class="sampleBox">
+            <div id="dice" class="numberBox">
+                1
+            </div>
+            <button onclick="rollTheDice()">Roll the dice</button>
+        </div>
+        <br>
+
+        <h3 class="textBoxText">add and subtract</h3>
+        <div class="sampleBox">
+            <div id="math" class="numberBox">
+                1
+            </div>
+            <button onclick="addOne()">add</button>
+            <button onclick="subOne()">subtract</button>
+        </div>
+        <br>
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+        <h3 class="textBoxText">Links</h3>
+        <div class="sampleBox">
+            <h3>open link in a new tab (a target="_blank")</h3>
+            <a href="https://www.google.com" target="_blank">open google</a>
+            <h3>open link in this tab (a target="_self")</h3>
+            <a href="https://www.google.com" target="_self">open google</a>
+        </div>
+    </section>
+
+    <br>
+
+    <section class="textBox">
+        <h2 class="textBoxTittle">Visual</h2>
+
+        <h3 class="textBoxText">images</h3>
+        <div class="sampleBox">
+            <h3>images (img)</h3>
+            <img src="GET_logo.png" alt="GET Academy logo">
+
+            <br>
+
+            <h3>if a source is missing or cant be found the (alt) property will be used as displayed text</h3>
+            <img alt="Image unavailable">
+            <br>
+            <br>
+            <img alt="the text can also be used to describe what its suposed to be">
+        </div>
+        <br>
+
+        <h3 class="textBoxText">Video</h3>
+        <div class="sampleBox">
+            <video height="360" width="480">solo</video>
+            <br>
+        </div>
+    </section>
+
+    <br>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
