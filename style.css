@@ -1,0 +1,131 @@
+div {
+    margin: auto;
+}
+
+.rabbit {
+    color:green;
+    font-family: cursive;
+    background-color: whitesmoke;
+    border-radius: 100em;
+    font-size: 30px;
+}
+.duck {
+    color:orange;
+    font-family: 'Times New Roman';
+    background-color: whitesmoke;
+    border-radius: 100em;
+    font-size: 30px;
+}
+#hunter {
+    background-color: rgba(137, 43, 226, 0.555);
+    padding: 5%;
+    margin: 20px auto;
+    border: 5px solid purple;
+    border-radius: 1em;
+    width: 200px;
+}
+
+/* style one */
+
+    .main-Dark{
+        color: rgb(243, 243, 243);
+        background-color: rgb(33, 34, 39);
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .tittle-Dark {
+        color: rgb(254, 231, 255);
+        text-align: center;
+    }
+
+
+        .textBox-Dark {
+            background-color: rgb(149, 16, 167);
+            color: black;
+            padding: 2%;
+            margin: 15px auto;
+            border: 5px solid rgb(96, 31, 116);
+            border-radius: 3em;
+            width: 80%;
+        }
+        .textBoxTittle-Dark {
+            color: white;
+            font-size: 30px;
+        }
+        .textBoxText-Dark {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+        }
+
+            .sampleBox-Dark {
+                background-color: white;
+                color: black;
+                padding: 2px;
+                border: 8px solid black;
+                border-radius: 5em;
+                width: 75%;
+                text-align: center;
+            }
+
+                .numberBox-Dark {
+                    background-color: rgba(137, 43, 226, 0.555);
+                    padding: 5%;
+                    margin: 20px auto;
+                    border: 5px solid purple;
+                    border-radius: 1em;
+                    width: 200px;
+                    font-size: 60px;
+                }
+
+
+
+/* style two */
+    .main-Light {
+        color: rgb(18, 11, 54);
+        background-color: rgb(241, 250, 255);
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .tittle-Light {
+        color: rgb(30, 30, 54);
+        text-align: center;
+    }
+
+
+        .textBox-Light {
+            background-color: rgb(190, 219, 228);
+            color: black;
+            padding: 2%;
+            margin: 15px auto;
+            border: 5px solid rgb(125, 123, 190);
+            border-radius: 3em;
+            width: 80%;
+        }
+        .textBoxTittle-Light {
+            color: black;
+            font-size: 30px;
+        }
+        .textBoxText-Light {
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+            .sampleBox-Light {
+                background-color: white;
+                color: black;
+                padding: 2px;
+                border: 8px solid rgb(85, 84, 90);
+                border-radius: 5em;
+                width: 75%;
+                text-align: center;
+            }
+
+                .numberBox-Light {
+                    background-color: rgba(101, 198, 211, 0.555);
+                    padding: 5%;
+                    margin: 20px auto;
+                    border: 5px solid rgb(103, 119, 190);
+                    border-radius: 1em;
+                    width: 200px;
+                    font-size: 60px;
+                }

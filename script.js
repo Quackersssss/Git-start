@@ -4,7 +4,7 @@ let diceRollNum = 1;
 var outputDiv_math = document.getElementById('math');
 let mathNum = 1;
 
-function hunting() {
+function huntingSeason() {
     if (document.getElementById('season').innerHTML != "RABBIT SEASON!") {
         document.getElementById('season').innerHTML = "RABBIT SEASON!";
         document.getElementById('season').classList = "rabbit"
@@ -27,4 +27,8 @@ function addOne() {
 function subOne() {
     mathNum -= 1
     outputDiv_math.innerHTML = mathNum
+}
+
+function warning() {
+    alert("i lied about the danger, this is an alert function its activated via javascript")
 }

@@ -11,48 +11,6 @@
             margin: auto;
         }
 
-        .main {
-            color: rgb(243, 243, 243);
-            background-color: rgb(33, 34, 39);
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        .tittle {
-            color: rgb(254, 231, 255);
-            text-align: center;
-        }
-
-        .textBox {
-            background-color: rgb(149, 16, 167);
-            color: black;
-            padding: 2%;
-            margin: 15px auto;
-            border: 5px solid rgb(96, 31, 116);
-            border-radius: 3em;
-            width: 80%;
-        }
-
-        .sampleBox {
-            background-color: white;
-            color: black;
-            padding: 2px;
-            border: 8px solid black;
-            border-radius: 5em;
-            width: 75%;
-            text-align: center;
-        }
-
-        .textBoxTittle {
-            color: white;
-            font-size: 30px;
-        }
-
-        .textBoxText {
-            color: white;
-            font-size: 18px;
-            text-align: center;
-        }
-
         .rabbit {
             color:green;
             font-family: cursive;
@@ -67,7 +25,6 @@
             border-radius: 100em;
             font-size: 30px;
         }
-
         #hunter {
             background-color: rgba(137, 43, 226, 0.555);
             padding: 5%;
@@ -77,16 +34,56 @@
             width: 200px;
         }
 
-        .numberBox{
-            background-color: rgba(137, 43, 226, 0.555);
-            padding: 5%;
-            margin: 20px auto;
-            border: 5px solid purple;
-            border-radius: 1em;
-            width: 200px;
-            font-size: 60px;
+
+        .main {
+            color: rgb(243, 243, 243);
+            background-color: rgb(33, 34, 39);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .tittle {
+            color: rgb(254, 231, 255);
+            text-align: center;
         }
 
+
+            .textBox {
+                background-color: rgb(149, 16, 167);
+                color: black;
+                padding: 2%;
+                margin: 15px auto;
+                border: 5px solid rgb(96, 31, 116);
+                border-radius: 3em;
+                width: 80%;
+            }
+            .textBoxTittle {
+                color: white;
+                font-size: 30px;
+            }
+            .textBoxText {
+                color: white;
+                font-size: 18px;
+                text-align: center;
+            }
+
+                .sampleBox {
+                    background-color: white;
+                    color: black;
+                    padding: 2px;
+                    border: 8px solid black;
+                    border-radius: 5em;
+                    width: 75%;
+                    text-align: center;
+                }
+
+                    .numberBox {
+                        background-color: rgba(137, 43, 226, 0.555);
+                        padding: 5%;
+                        margin: 20px auto;
+                        border: 5px solid purple;
+                        border-radius: 1em;
+                        width: 200px;
+                        font-size: 60px;
+                    }
 
 
     </style>
@@ -168,15 +165,15 @@
 
         <h3 class="textBoxText">Buttons</h3>
         <div class="sampleBox">
-            <button>does nothing</button>
+            <button>does nothing</button> <!-- no seriously its not bound to a function -->
             <br>
 
             <div id="hunter">
                 <h1 id="season" class="rabbit">RABBIT SEASON!</h1>
-                <button onClick="hunting()">ripp</button>
+                <button onClick="huntingSeason()">ripp</button>
             </div>
             <br>
-            <button>alert!</button>
+            <button onClick="warning()">DANGER!</button>
         </div>
         <br>
 
@@ -198,7 +195,7 @@
             <button onclick="subOne()">subtract</button>
         </div>
         <br>
-<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
         <h3 class="textBoxText">Links</h3>
         <div class="sampleBox">
             <h3>open link in a new tab (a target="_blank")</h3>
@@ -216,7 +213,7 @@
         <h3 class="textBoxText">images</h3>
         <div class="sampleBox">
             <h3>images (img)</h3>
-            <img src="duck.png" alt="Duck image">
+            <img src="duck.png" alt="Bonus Duck image">
 
             <br>
 
@@ -224,21 +221,67 @@
             <img alt="Image unavailable">
             <br>
             <br>
-            <img alt="the text can also be used to describe what its suposed to be">
+            <img alt="the text can also be used to describe what its suposed to be, or anything else you want">
         </div>
         <br>
 
         <h3 class="textBoxText">Video</h3>
         <div class="sampleBox">
-            <video height="360" width="480">solo</video>
+            <video height="360" width="480"></video>
+            <br>h
+        </div>
+    </section>
+    <br>
+
+    <section class="textBox">
+        <h2 class="textBoxTittle">Key Binds</h2>
+
+        <h3 class="textBoxText">Comment Out</h3>
+        <div class="sampleBox">
+            <h3>[ctrl] => k -> c</h3>
+            <p>holding the ctrl button and then pressing k and c in that order you Comment out all selected code</p>
             <br>
+            
+            <h3>[ctrl] => *</h3>
+            <p>holding the ctrl button and then pressing the star button is another way to comment out a select area</p>
+            <img src="key.png">
+            <br>
+            <p>if you do not have a area selected it will take effect on the line you are curently editing</p>
+        </div>
+        <br>
+
+        <h3 class="textBoxText">Copy/Cut/Paste</h3>
+        <div class="sampleBox">
+            <h2>Copy</h2>
+            <h3>[Ctrl] => c</h3>
+            <p>holding the ctrl button and then pressing c will copy anything selected onto your clipboard,</p>
+            <br>
+
+            <h2>Cut</h2>
+            <h3>[Ctrl] => x</h3>
+            <p>holding the ctrl button and then pressing x will cut out anythin selected</p>
+            <br>
+
+            <h3>[Shift] => [Delete]</h3>
+            <p>holding the shift button and then pressing the delete button will "cut" out the curent selected area putting it onto your clipboard while also removing it from the text</p>
+            <p>not selecting an area will result in the curent line your working on getting cut out</p>
+            <br>
+
+            <h2>Paste</h2>
+            <h3>[Ctrl] => v</h3>
+            <p>holding ctrl and presing v will paste your curent clipboard, if selecting an area it will replace what you have selected</p>
+            <br>
+        </div>
+        <br>
+
+        <h3 class="textBoxText">Zooming</h3>
+        <div class="sampleBox">
+        <p>ctrl and mouse wheel, ctrl and + or -, windows button and +</p>
         </div>
     </section>
 
-    <br>
-
-    <script src="script.js"></script>
+    <script src="script.js">
+        console.log("load")
+    </script>
 </body>
-
-
 </html>
