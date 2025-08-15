@@ -5,98 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         /* element style */
         div {
             margin: auto;
         }
 
-        .rabbit {
-            color:green;
-            font-family: cursive;
-            background-color: whitesmoke;
-            border-radius: 100em;
-            font-size: 30px;
+        .combatLog {
+            margin: 8px;
+            color: whitesmoke;
         }
-        .duck {
-            color:orange;
-            font-family: 'Times New Roman';
-            background-color: whitesmoke;
-            border-radius: 100em;
-            font-size: 30px;
+
+        .statsText {
+            color: rgb(39, 36, 34);
+            font-size: 16px
         }
-        #hunter {
-            background-color: rgba(137, 43, 226, 0.555);
-            padding: 5%;
-            margin: 20px auto;
-            border: 5px solid purple;
-            border-radius: 1em;
+        
+        .colorButton {
+            height: 50px;
             width: 200px;
+            border-radius: 1em;
         }
-
-
-        .main {
-            color: rgb(243, 243, 243);
-            background-color: rgb(33, 34, 39);
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .tittle {
-            color: rgb(254, 231, 255);
-            text-align: center;
-        }
-
-
-            .textBox {
-                background-color: rgb(149, 16, 167);
-                color: black;
-                padding: 2%;
-                margin: 15px auto;
-                border: 5px solid rgb(96, 31, 116);
-                border-radius: 3em;
-                width: 80%;
-            }
-            .textBoxTittle {
-                color: white;
-                font-size: 30px;
-            }
-            .textBoxText {
-                color: white;
-                font-size: 18px;
-                text-align: center;
-            }
-
-                .sampleBox {
-                    background-color: white;
-                    color: black;
-                    padding: 2px;
-                    border: 8px solid black;
-                    border-radius: 5em;
-                    width: 75%;
-                    text-align: center;
-                }
-
-                    .numberBox {
-                        background-color: rgba(137, 43, 226, 0.555);
-                        padding: 5%;
-                        margin: 20px auto;
-                        border: 5px solid purple;
-                        border-radius: 1em;
-                        width: 200px;
-                        font-size: 60px;
-                    }
-
 
     </style>
 </head>
 
-<body class="main">
-    <h1 class="tittle">Objects and Properties</h1>
+<body class="main-Dark" id="main">
+    <!-- <button onclick="lighMode()">Light</button> -->
+    <!-- <button onclick="darkMode()">Dark</button> -->
 
-    <section class="textBox">
-        <h2 class="textBoxTittle">Text lines</h2>
 
-        <h3 class="textBoxText">headings</h3>
-        <div class="sampleBox">
+    
+                                                                    <!-- Text holders -->
+    <h1 class="tittle-Dark tittle">Objects and Properties</h1>
+
+    <section class="textBox-Dark textBox">
+        <h2 class="textBoxTittle-Dark textBoxTittle">Text lines</h2>
+
+        <h3 class="textBoxText-Dark textBoxText">headings</h3>
+        <div class="sampleBox-Dark sampleBox">
             <h1>Heading object H1</h1>
             <h2>Heading object H2</h2>
             <h3>Heading object H3</h3>
@@ -105,24 +53,24 @@
             <h6>Heading object H6</h6>
             <h>Heading object H</h>
         </div>
-        <p class="textBoxText">(h#) objects hold style info by default on most browsers</p>
+        <p class="textBoxText-Dark textBoxText">(h#) objects hold style info by default on most browsers</p>
         <br>
 
-        <h3 class="textBoxText">paragraphs</h3>
-        <div class="sampleBox">
+        <h3 class="textBoxText-Dark textBoxText">paragraphs</h3>
+        <div class="sampleBox-Dark sampleBox">
             <p>
                 (p) is a simple text holder
             </p>
         </div>
     </section>
-
     <br>
 
-    <section class="textBox">
-        <h2 class="textBoxTittle">Lists & tables</h2>
+                                                                    <!-- list -->
+    <section class="textBox-Dark textBox">
+        <h2 class="textBoxTittle-Dark textBoxTittle">Lists & tables</h2>
 
-        <h3 class="textBoxText">lists</h3>
-        <div class="sampleBox">
+        <h3 class="textBoxText-Dark textBoxText">lists</h3>
+        <div class="sampleBox-Dark sampleBox">
             <h2>ordered list (ol > li)</h3>
             <ol>
                 <li>entry one</li>
@@ -135,11 +83,11 @@
                 <li>entry two</li>
             </ul>
         </div>
-        <p class="textBoxText">style sheet can be used to chage the symbol shown on list entries</p>
+        <p class="textBoxText-Dark textBoxText">style sheet can be used to chage the symbol shown on list entries</p>
         <br>
 
-        <h3 class="textBoxText">tables</h3>
-        <div class="sampleBox">
+        <h3 class="textBoxText-Dark textBoxText">tables</h3>
+        <div class="sampleBox-Dark sampleBox">
             <h2>tables (tables > tr > th)</h2>
             <table style="margin: auto;">
                 <tr>
@@ -157,61 +105,14 @@
             </table>
         </div>
     </section>
-
     <br>
 
-    <section class="textBox">
-        <h2 class="textBoxTittle">functional</h2>
+                                                                    <!-- Visual -->
+    <section class="textBox-Dark textBox">
+        <h2 class="textBoxTittle-Dark textBoxTittle">Visual</h2>
 
-        <h3 class="textBoxText">Buttons</h3>
-        <div class="sampleBox">
-            <button>does nothing</button> <!-- no seriously its not bound to a function -->
-            <br>
-
-            <div id="hunter">
-                <h1 id="season" class="rabbit">RABBIT SEASON!</h1>
-                <button onClick="huntingSeason()">ripp</button>
-            </div>
-            <br>
-            <button onClick="warning()">DANGER!</button>
-        </div>
-        <br>
-
-        <h3 class="textBoxText">Random</h3>
-        <div class="sampleBox">
-            <div id="dice" class="numberBox">
-                1
-            </div>
-            <button onclick="rollTheDice()">Roll the dice</button>
-        </div>
-        <br>
-
-        <h3 class="textBoxText">add and subtract</h3>
-        <div class="sampleBox">
-            <div id="math" class="numberBox">
-                1
-            </div>
-            <button onclick="addOne()">add</button>
-            <button onclick="subOne()">subtract</button>
-        </div>
-        <br>
-
-        <h3 class="textBoxText">Links</h3>
-        <div class="sampleBox">
-            <h3>open link in a new tab (a target="_blank")</h3>
-            <a href="https://www.google.com" target="_blank">open google</a>
-            <h3>open link in this tab (a target="_self")</h3>
-            <a href="https://www.google.com" target="_self">open google</a>
-        </div>
-    </section>
-
-    <br>
-
-    <section class="textBox">
-        <h2 class="textBoxTittle">Visual</h2>
-
-        <h3 class="textBoxText">images</h3>
-        <div class="sampleBox">
+        <h3 class="textBoxText-Dark textBoxText">images</h3>
+        <div class="sampleBox-Dark sampleBox">
             <h3>images (img)</h3>
             <img src="duck.png" alt="Bonus Duck image">
 
@@ -225,19 +126,20 @@
         </div>
         <br>
 
-        <h3 class="textBoxText">Video</h3>
-        <div class="sampleBox">
+        <h3 class="textBoxText-Dark textBoxText">Video</h3>
+        <div class="sampleBox-Dark sampleBox">
             <video height="360" width="480"></video>
-            <br>h
+            <br>
         </div>
     </section>
     <br>
 
-    <section class="textBox">
-        <h2 class="textBoxTittle">Key Binds</h2>
+                                                                    <!-- Key Binds -->
+    <section class="textBox-Dark textBox">
+        <h2 class="textBoxTittle-Dark textBoxTittle">Key Binds</h2>
 
-        <h3 class="textBoxText">Comment Out</h3>
-        <div class="sampleBox">
+        <h3 class="textBoxText-Dark textBoxText">Comment Out</h3>
+        <div class="sampleBox-Dark sampleBox">
             <h3>[ctrl] => k -> c</h3>
             <p>holding the ctrl button and then pressing k and c in that order you Comment out all selected code</p>
             <br>
@@ -250,8 +152,8 @@
         </div>
         <br>
 
-        <h3 class="textBoxText">Copy/Cut/Paste</h3>
-        <div class="sampleBox">
+        <h3 class="textBoxText-Dark textBoxText">Copy/Cut/Paste</h3>
+        <div class="sampleBox-Dark sampleBox">
             <h2>Copy</h2>
             <h3>[Ctrl] => c</h3>
             <p>holding the ctrl button and then pressing c will copy anything selected onto your clipboard,</p>
@@ -260,7 +162,6 @@
             <h2>Cut</h2>
             <h3>[Ctrl] => x</h3>
             <p>holding the ctrl button and then pressing x will cut out anythin selected</p>
-            <br>
 
             <h3>[Shift] => [Delete]</h3>
             <p>holding the shift button and then pressing the delete button will "cut" out the curent selected area putting it onto your clipboard while also removing it from the text</p>
@@ -274,14 +175,154 @@
         </div>
         <br>
 
-        <h3 class="textBoxText">Zooming</h3>
-        <div class="sampleBox">
-        <p>ctrl and mouse wheel, ctrl and + or -, windows button and +</p>
+        <h3 class="textBoxText-Dark textBoxText">Zooming</h3>
+        <div class="sampleBox-Dark sampleBox">
+        <!-- ctrl and mouse wheel, ctrl and + or -, windows button and + -->
         </div>
     </section>
+    <br>
 
-    <script src="script.js">
-        console.log("load")
-    </script>
+                                                                    <!-- Functional -->
+    <section class="textBox-Dark textBox">
+        <h2 class="textBoxTittle-Dark textBoxTittle">functional</h2>
+
+        <h3 class="textBoxText-Dark textBoxText">Buttons</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <button>does nothing</button> <!-- no seriously its not bound to a function -->
+            <br>
+
+            <div id="hunter">
+                <h1 id="season" class="rabbit">RABBIT SEASON!</h1>
+                <button onClick="huntingSeason()">ripp</button>
+            </div>
+            <br>
+            <button onClick="warning()">DANGER!</button>
+        </div>
+        <br>
+
+        <!-- Variables -->
+        <h3 class="textBoxText-Dark textBoxText">Variables</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <h3>var</h3>
+            <p>variables are data storing items.<br>a var asigned the number 2 can be turned into any other number but will always keep its asigned value type</p>
+            <br>
+
+            <h3>let</h3>
+            <p>the let variable is the least restricted variant allowing chang to everything.<br>a let asigned the number 2 can be turned into any other data type</p>
+            <br>
+
+            <h3>const</h3>
+            <p>const is a variable type that when defined can not be changed.<br>a const asigned the number 2 will have that in all refrences to it</p>
+            <br>
+        </div>
+        <br>
+
+        <!-- Links -->
+        <h3 class="textBoxText-Dark textBoxText">Links</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <h3>open link in a new tab (a target="_blank")</h3>
+            <a href="https://www.google.com" target="_blank">open google</a>
+            <h3>open link in this tab (a target="_self")</h3>
+            <a href="https://www.google.com" target="_self">open google</a>
+        </div>
+        <br>
+
+    </section>
+    <br>
+
+                                                                    <!-- Scripts -->
+    <div class="textBox-Dark textBox">
+        <h2 class="textBoxTittle-Dark textBoxTittle">Script</h2>
+
+        <!-- Dice -->
+        <h3 class="textBoxText-Dark textBoxText">Random</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div id="dice" class="numberBox-Dark">
+                10
+            </div>
+            <button onclick="rollTheDice()">Roll the dice</button>
+        </div><br>
+
+        <!-- Math -->
+        <h3 class="textBoxText-Dark textBoxText">add and subtract</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div id="math" class="numberBox-Dark">
+                1
+            </div>
+            <button onclick="subOne()">subtract</button>
+            <input type="number" id="numberForMath">
+            <button onclick="addOne()">add</button>
+        </div>
+        <br>
+
+        <!-- background color changer -->
+        <h3 class="textBoxText-Dark textBoxText">background color</h3>
+        <div class="sampleBox-Dark sampleBox" id="backgroundBox">
+            <button onclick="backgoundChange()">select</button>
+            <br>
+            <div style="display: flex;">
+                <div class="colorButton" style="background-color: yellow; color: yellow;" onclick="colorPicker('yellow')"></div>
+                <div class="colorButton" style="background-color: cyan; color: cyan;" onclick="colorPicker('cyan')"></div>
+                <div class="colorButton" style="background-color: red; color: red;" onclick="colorPicker('red')"></div>
+            </div>
+        </div>
+
+        <!-- Stoppeklokke -->
+        <h3 class="textBoxText-Dark textBoxText">Stopwatch</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div id="timer" class="numberBox-Dark">
+                00:00
+            </div>
+            <button>start</button>
+            <button>stop</button>
+        </div>
+        <br>
+
+        <!-- Game -->
+        <h3 class="textBoxText-Dark textBoxText">fight game</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div id="fightGame">
+                <!-- <p>Welcome ${myName}</p>
+                <div style="display: flex;">
+                    
+                    <div style="
+                        width: 65%;
+                        background-color: gold;
+                        margin: 0px;
+                        border: 3px solid goldenrod;
+                        border-radius: 1em;
+                    ">
+                        <p id="energyDiv" class="statsText">Energy: ${energy}</p>
+                        <p id="playerHealthDiv" class="statsText">Player HP: ${playerHealth}</p>
+                        <p id="duckHealthDiv" class="statsText">Enemy HP: ${duckHealth}</p>
+                    </div>
+                    <div style="
+                        width: 100%;
+                        background-color: rgb(48, 48, 48);
+                        margin: 0px;
+                        border: 3px solid gray;
+                        border-radius: 1em;
+                    ">
+                        <p id="CombatLog_1" class="combatLog">CombatLog_</p>
+                        <p id="CombatLog_2" class="combatLog">CombatLog_</p>
+                        <p id="CombatLog_3" class="combatLog">CombatLog_</p>
+                        <p id="CombatLog_4" class="combatLog">CombatLog_</p>
+                        <p id="CombatLog_5" class="combatLog">CombatLog_</p>
+                    </div>
+
+                </div> -->
+                <img src="duck.png" ondblclick="notSoSecretFight()">
+            </div>
+            <br>
+            <input id="inputName">
+            <button onclick="startGame()">Fight</button>
+        </div>
+
+
+    </div>
+    <br>
+    <br>
+    
+    <script src="script.js"></script>
 </body>
 </html>
