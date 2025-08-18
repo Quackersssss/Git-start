@@ -10,6 +10,15 @@ function lighMode() {
 }
 
 
+                                                                                // variable proof
+function proof() {
+    function canCall() {
+        var variable_One = 1
+    }
+    console.log(variable_One)
+}
+
+
 
 
 
@@ -68,23 +77,22 @@ function warning() {
 
 
 
-
                                                                                 // stopwatch
 // var seconds
 // function
 
 
-
+        //  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
                                                                                 // background ColorChanger
 var selectedColor = "red"
 function colorPicker(colorPick) {
-    selectedColor = colorPick
+    selectedColor = colorPick   // used in the onclick for divs to 
 }
 
 function backgoundChange() {
-    document.getElementById('backgroundBox').style.backgroundColor = selectedColor
+    document.getElementById('main').style.backgroundColor = selectedColor
 }
 
 
@@ -148,15 +156,16 @@ var duckMinDamage = 10;
 function notSoSecretFight() {
     myName = "Gabriel";
 
-    document.getElementById('fightGame').innerHTML = /*HTML*/`
-    <p>Welcome ${myName}!</p>
-    <p id="moneyDiv">Gold: ${money}</p>
-    <p id="energyDiv">Energy: ${energy}</p>
-    <p id="dummyDiv">Dummy HP: ${dummyHealth}</p>
-    <img height="200" src="duck.png">
-    <button onClick="PickUpMoney()">Scavange for gold</button>
-    <button onClick="attack()">Strike dummy</button>
-    `
+    // document.getElementById('fightGame').innerHTML = /*HTML*/`
+    // <p>Welcome ${myName}!</p>
+    // <p id="moneyDiv">Gold: ${money}</p>
+    // <p id="energyDiv">Energy: ${energy}</p>
+    // <p id="dummyDiv">Dummy HP: ${dummyHealth}</p>
+    // <img height="200" src="duck.png">
+    // <button onClick="PickUpMoney()">Scavange for gold</button>
+    // <button onClick="attack()">Strike dummy</button>
+    // `
+
 }
 
 

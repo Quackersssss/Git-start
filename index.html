@@ -175,10 +175,6 @@
         </div>
         <br>
 
-        <h3 class="textBoxText-Dark textBoxText">Zooming</h3>
-        <div class="sampleBox-Dark sampleBox">
-        <!-- ctrl and mouse wheel, ctrl and + or -, windows button and + -->
-        </div>
     </section>
     <br>
 
@@ -214,6 +210,15 @@
             <h3>const</h3>
             <p>const is a variable type that when defined can not be changed.<br>a const asigned the number 2 will have that in all refrences to it</p>
             <br>
+
+            <p>if a variable is declared within a code block ex. funtion, for, if. it will only be available within that block of code</p>
+            <div style="border: solid; padding: 0; width: 200px; text-align: left;">function canCall() {<br>
+                  var variable_One = 1<br>
+                }<br>
+                console.log(variable_One)
+            </div>
+            <p>This line of code will not work no matter wich variable type you use</p>
+            <p onclick="proof()" style="color: rgb(163, 48, 48); font-family: sans-serif;">click on this text with the console open to see</p>
         </div>
         <br>
 
@@ -231,7 +236,7 @@
     <br>
 
                                                                     <!-- Scripts -->
-    <div class="textBox-Dark textBox">
+    <div class="textBox-Dark textBox" style="border-color: goldenrod;">
         <h2 class="textBoxTittle-Dark textBoxTittle">Script</h2>
 
         <!-- Dice -->
@@ -264,15 +269,16 @@
                 <div class="colorButton" style="background-color: yellow; color: yellow;" onclick="colorPicker('yellow')"></div>
                 <div class="colorButton" style="background-color: cyan; color: cyan;" onclick="colorPicker('cyan')"></div>
                 <div class="colorButton" style="background-color: red; color: red;" onclick="colorPicker('red')"></div>
+                <div class="colorButton" style="background-color: rgb(33, 34, 39); color: rgb(33, 34, 39);" onclick="colorPicker('rgb(33, 34, 39)')"></div>
             </div>
         </div>
 
-        <!-- Stoppeklokke -->
+        <!-- Stoppeklokke --> 
         <h3 class="textBoxText-Dark textBoxText">Stopwatch</h3>
         <div class="sampleBox-Dark sampleBox">
             <div id="timer" class="numberBox-Dark">
                 00:00
-            </div>
+            </div>                  <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  -->
             <button>start</button>
             <button>stop</button>
         </div>
