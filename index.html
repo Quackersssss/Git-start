@@ -31,7 +31,7 @@
     </style>
 </head>
 
-<body class="main-Dark" id="main">
+<body class="main-Dark main" id="main">
     <!-- <button onclick="lighMode()">Light</button> -->
     <!-- <button onclick="darkMode()">Dark</button> -->
 
@@ -236,7 +236,7 @@
     <br>
 
                                                                     <!-- Scripts -->
-    <div class="textBox-Dark textBox" style="border-color: goldenrod;">
+    <section class="textBox-Dark textBox" style="border-color: goldenrod;">
         <h2 class="textBoxTittle-Dark textBoxTittle">Script</h2>
 
         <!-- Dice -->
@@ -263,7 +263,7 @@
         <!-- background color changer -->
         <h3 class="textBoxText-Dark textBoxText">background color</h3>
         <div class="sampleBox-Dark sampleBox" id="backgroundBox">
-            <button onclick="backgoundChange()">select</button>
+            <button id="colorSelectButton" onclick="backgoundChange()">select</button>
             <br>
             <div style="display: flex;">
                 <div class="colorButton" style="background-color: yellow; color: yellow;" onclick="colorPicker('yellow')"></div>
@@ -277,10 +277,12 @@
         <h3 class="textBoxText-Dark textBoxText">Stopwatch</h3>
         <div class="sampleBox-Dark sampleBox">
             <div id="timer" class="numberBox-Dark">
-                00:00
-            </div>                  <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  -->
-            <button>start</button>
-            <button>stop</button>
+                0 seconds
+            </div>
+            <!-- <button>start</button> -->
+            <button onclick="startTimer()">start</button>
+            <button onclick="stopTimer()">stop</button>
+            <button onclick="resetTimer()">reset</button>
         </div>
         <br>
 
@@ -323,9 +325,36 @@
             <input id="inputName">
             <button onclick="startGame()">Fight</button>
         </div>
+        <br>
+        
+        <!-- Inventory -->
+        <h3 class="textBoxText-Dark textBoxText">Inventory</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div>
+                <div id="bag" style="width: auto; height: auto; border: solid brown 2px; display: flex; width: 90%;">
+                    <div id="bagOptions">
+                        <p onclick="openBag()">Open<br>bag</p>
+                    </div>
+                    <div id="bagInventory" style="display: flex;">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class style="display: flex;">
+                <br>
+                <div class="item" id="red" style="border: solid rgb(148, 0, 0) 2px; background-color: red;" onclick="addItem('red')">ITEM<br>ONE</div>
+                <br>
+                <div class="item" id="blue" style="border: solid rgb(0, 0, 148) 2px; background-color: rgb(54, 181, 255);" onclick="addItem('blue')">ITEM<br>TWO</div>
+                <br>
+                <div class="item" id="green" style="border: solid rgb(0, 121, 0) 2px; background-color: rgb(0, 255, 0);" onclick="addItem('green')">ITEM<br>THREE</div>
+                <br>
+                <div class="item" id="yellow" style="border: solid rgb(131, 131, 0) 2px; background-color: yellow;" onclick="addItem('yellow')">ITEM<br>FOUR</div>
+                <br>
+            </div>
+        </div>
+        <br>
 
-
-    </div>
+    </section>
     <br>
     <br>
     

@@ -78,21 +78,47 @@ function warning() {
 
 
                                                                                 // stopwatch
-// var seconds
-// function
+var seconds = 0
+var activeTimer = false
+function timerSeconds() {
+    if (activeTimer === true) {
+        seconds += 1
+        if (seconds === 1) {
+            document.getElementById('timer').innerHTML = seconds + " seccond"
+        } else {
+            document.getElementById('timer').innerHTML = seconds + " secconds"
+        }
+    }
+}
+
+const myTimer = setInterval(timerSeconds /*function to repeat*/, 1000/**thime between repeats */)
+
+function startTimer() {
+    activeTimer = true
+}
+
+function stopTimer() {
+    document.getElementById('timer').innerHTML += "<br> frozen"
+    activeTimer = false
+}
+
+function resetTimer() {
+    seconds = 0 
+    document.getElementById('timer').innerHTML = seconds + " secconds"
+}
 
 
-        //  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
                                                                                 // background ColorChanger
-var selectedColor = "red"
+var selectedColor = "red" // this variable holds the color information
 function colorPicker(colorPick) {
     selectedColor = colorPick   // used in the onclick for divs to 
+    document.getElementById('colorSelectButton').style.backgroundColor = colorPick // this changes the select button text color so its easier to see wich you have selected
 }
 
 function backgoundChange() {
-    document.getElementById('main').style.backgroundColor = selectedColor
+    document.getElementById('main').style.backgroundColor = selectedColor //when called this changes the background color to the color stored in selectedColor
 }
 
 
@@ -176,3 +202,71 @@ function sweep(){
     document.getElementById('dummyDiv').innerHTML = `Dummy Hp: ${dummyHealth}`
 }
 
+
+
+
+
+
+
+
+                                                                                //Inventory
+const bagItems =[]
+var bagIsOpen = false
+
+function addItem(itemId) {
+    let originalItem = document.getElementById(itemId);
+
+    bagItems.push([`${originalItem.style.border}`, `${originalItem.style.backgroundColor}`, `${originalItem.innerHTML}`, bagItems.length])
+        
+    console.log(bagItems);
+    if (bagIsOpen === true) {
+        openBag() //refreshes the bag visual if its open
+    };
+}
+
+
+
+
+
+function openBag() {
+    document.getElementById('bagOptions').innerHTML = /*HTML*/`
+        <p onclick="closeBag()">Close<br>bag</p>
+    `
+    document.getElementById('bagInventory').innerHTML = /*HTML*/`
+        <div>
+    `
+    for (let i = 0; i < bagItems.length; i++) {
+        document.getElementById('bagInventory').innerHTML += /*HTML*/`
+        <div class="bagItem" id="item${i}" style="border: ${bagItems[i][0]}; background-color: ${bagItems[i][1]};" onclick="findIndexById(bagItems[${i}][3])">${bagItems[i][2]}</div>
+
+        `
+    }
+    bagIsOpen = true
+}
+
+
+
+
+function closeBag() {
+    document.getElementById('bagOptions').innerHTML = /*HTML*/`
+        <p onclick="openBag()">Open<br>bag</p>
+    `
+    document.getElementById('bagInventory').innerHTML = /*HTML*/`
+        <div>
+    `
+    bagIsOpen = false
+}
+
+
+
+function findIndexById(itemId) {
+    var indexOfId = bagItems.findIndex(item => {
+        return item[3] == itemId //finds the index of item using itemId
+    })
+    
+    bagItems.splice(indexOfId, 1/**amount to remove*/) //removes the item with the right index
+    
+    if (bagIsOpen === true) { 
+        openBag() //refreshes the bag visual if its open
+    };
+}

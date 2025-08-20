@@ -21,6 +21,24 @@
     width: 200px;
 }
 
+.item{
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+}
+.bagItem{
+    width: 30px;
+    height: 30px;
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    font-size: 14px;
+}
+#bag {
+    background-color: wheat;
+}
+
+
+
 /* style one */
 
     .main-Dark{
