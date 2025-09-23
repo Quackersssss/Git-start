@@ -37,7 +37,27 @@
     background-color: wheat;
 }
 
+.lights {
+    width: 200px;
+    height: 200px;
+    border: solid black 3px;
+    margin: 12%;
+    border-radius: 200em;
+}
 
+.greenLightOn {
+    background-color: rgb(72, 255, 0);
+}
+.yellowLightOn {
+    background-color: yellow;
+}
+.redLightOn {
+    background-color: red;
+}
+
+.lightOff {
+    background-color: rgb(44, 44, 44);
+}
 
 /* style one */
 
@@ -70,7 +90,17 @@
             font-size: 18px;
             text-align: center;
         }
+        .closeButton-Dark {
+            border: 3px solid rgb(96, 31, 116);
+            height: 90px;
+            width: 60px;
+            font-size: 80px;
+            text-align: center;
+            margin-left: 80%;
+            background-color: rgb(125, 19, 139);
+        }
 
+        
             .sampleBox-Dark {
                 background-color: white;
                 color: black;
