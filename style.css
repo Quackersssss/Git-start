@@ -1,3 +1,36 @@
+div {
+    margin: auto;
+}
+
+.combatLog {
+    margin: 8px;
+    color: whitesmoke;
+}
+
+.statsText {
+    color: rgb(39, 36, 34);
+    font-size: 16px
+}
+
+.colorButton {
+    height: 50px;
+    width: 200px;
+    border-radius: 1em;
+}
+
+.greenLighOn {
+    background-color: rgb(72, 255, 0);
+}
+.yellowLightOn {
+    background-color: yellow;
+}
+.redLightOn {
+    background-color: red;
+}
+.lightOff {
+    background-color: rgb(44, 44, 44);
+}
+
 .rabbit {
     color:green;
     font-family: cursive;

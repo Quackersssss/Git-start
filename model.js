@@ -6,4 +6,4 @@ var listsAndTablesOpen = false;
 var visualOpen = false;
 var keyBindsOpen = false;
 var functionalOpen = false;
-var scriptsOpen = false;
+var scriptsOpen = true;

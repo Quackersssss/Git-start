@@ -1,169 +1,3 @@
-function showScripts() {
-    html = `
-        <h2 class="textBoxText-Dark textBoxText" style="font-size: 30px;">Math</h2>
-        <!-- Dice -->
-        <h3 class="textBoxText-Dark textBoxText">Random</h3>
-        <div class="sampleBox-Dark sampleBox">
-            <div id="dice" class="numberBox-Dark">
-                10
-            </div>
-            <button onclick="rollTheDice()">Roll the dice</button>
-        </div><br>
-
-        <!-- Math -->
-        <h3 class="textBoxText-Dark textBoxText">add and subtract</h3>
-        <div class="sampleBox-Dark sampleBox">
-            <div id="math" class="numberBox-Dark">
-                1
-            </div>
-            <button onclick="subOne()">subtract</button>
-            <input type="number" id="numberForMath">
-            <button onclick="addOne()">add</button>
-        </div>
-
-        <!-- Gator Game -->
-        <h3 class="textBoxText-Dark textBoxText">add and subtract</h3>
-        <div class="sampleBox-Dark sampleBox">
-            <div style="display: flex;">
-                <div id="gatorOne" class="numberBox-Dark">
-                    1
-                </div>
-                <div class="numberBox-Dark">
-                    <input value=">" id="lessOrMore" style="text-align: center; font-size: 42px; width: 40%">
-                </div>
-                <div id="gatorTwo" class="numberBox-Dark">
-                    1
-                </div>
-            </div>
-            <button onclick="isLessOrMore()">check</button><button onclick="gatorAgain()">reset</button>
-            <div id="gatorResult" class="numberBox-Dark"></div>
-        </div>
-
-
-        <!-- background color changer -->
-        <h3 class="textBoxText-Dark textBoxText">background color</h3>
-        <div class="sampleBox-Dark sampleBox" id="backgroundBox">
-            <button id="colorSelectButton" onclick="backgoundChange()">select</button>
-            <br>
-            <div style="display: flex;">
-                <div class="colorButton" style="background-color: yellow; color: yellow;" onclick="colorPicker('yellow')"></div>
-                <div class="colorButton" style="background-color: cyan; color: cyan;" onclick="colorPicker('cyan')"></div>
-                <div class="colorButton" style="background-color: red; color: red;" onclick="colorPicker('red')"></div>
-                <div class="colorButton" style="background-color: rgb(33, 34, 39); color: rgb(33, 34, 39);" onclick="colorPicker('rgb(33, 34, 39)')"></div>
-            </div>
-        </div>
-
-        <!-- Stoppeklokke --> 
-        <h3 class="textBoxText-Dark textBoxText">Stopwatch</h3>
-        <div class="sampleBox-Dark sampleBox">
-            <div id="timer" class="numberBox-Dark">
-                0 seconds
-            </div>
-            <!-- <button>start</button> -->
-            <button onclick="startTimer()">start</button>
-            <button onclick="stopTimer()">stop</button>
-            <button onclick="resetTimer()">reset</button>
-        </div>
-        <br>
-
-        <!-- Game -->
-        <h3 class="textBoxText-Dark textBoxText">fight game</h3>
-        <div class="sampleBox-Dark sampleBox">
-            <div id="fightGame">
-                <p>Welcome User</p>
-                <div style="display: flex;">
-                    
-                </div>
-                <img src="duck.png" ondblclick="notSoSecretFight()">
-            </div>
-            <br>
-            <input id="inputName">
-            <button onclick="startGame()">Fight</button>
-        </div>
-        <br>
-        
-        <!-- Inventory -->
-        <h3 class="textBoxText-Dark textBoxText">Inventory</h3>
-        <div class="sampleBox-Dark sampleBox">
-            <div>
-                <div id="bag" style="width: auto; height: auto; border: solid brown 2px; display: flex; width: 90%;">
-                    <div id="bagOptions" style="width: 15%;">
-                        <p onclick="openBag()">Open<br>bag</p>
-                    </div>
-                    <div id="bagInventory" style="display: grid; width: 85%; grid-template-columns: repeat(14, 40px);">
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="numberBox-Dark" style="display: flex;">
-                <br>
-                <div class="item" id="red" style="border: solid rgb(148, 0, 0) 2px; background-color: red;" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
-                <br>
-                <div class="item" id="blue" style="border: solid rgb(0, 0, 148) 2px; background-color: rgb(54, 181, 255);" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
-                <br>
-                <div class="item" id="green" style="border: solid rgb(0, 121, 0) 2px; background-color: rgb(0, 255, 0);" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
-                <br>
-                <div class="item" id="yellow" style="border: solid rgb(131, 131, 0) 2px; background-color: yellow;" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
-                <br>
-            </div>
-        </div>
-        <br>
-
-        <!-- Trafic light -->
-        <h3 class="textBoxText-Dark textBoxText">Trafic light</h3>
-        <div class="sampleBox-Dark sampleBox">
-            <br>
-            <br>
-            <div style="width: 270px; height: 750px; border: solid black 3px; background-color: gray; border-radius: 200em;">
-                <div class="lights redLightOn" id="redLight" onclick="turnLightOn(redLight, 'redLightOn')"></div>
-
-                <div class="lights lightOff" id="yellowLight" onclick="turnLightOn(yellowLight, 'yellowLightOn')"></div>
-                
-                <div class="lights lightOff" id="greenLight" onclick="turnLightOn(greenLight, 'greenLightOn')"></div>
-
-            </div>
-            <br>
-            <br>
-        </div>
-        <br>
-
-
-        <!-- Magic 8 ball -->
-        <h3 class="textBoxText-Dark textBoxText">8 ball</h3>
-        <div class="sampleBox-Dark sampleBox">
-            <h3>Ask the magic 8 ball any question you would like</h3>
-            <div style="border: solid 2px black; background-color: black; width: 400px; height: 400px; border-radius: 100%;" ondblclick="shakeEightBall()">
-                <div style="border: solid 2px blue; background-color: blue; width: 200px; height: 200px; border-radius: 100%; margin-top: 100px;">
-                    <br>
-                    <br>
-                    <div id="eightBallText" style="font-size: 36px; color: white">8</div>
-                </div>
-            </div>
-            <p>double click to activate</p>
-        </div>
-        <br>
-    `
-
-
-
-    return html;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 updateView()
 function updateView() {
@@ -177,9 +11,8 @@ function updateView() {
     `
 
 
-    if (textLinesOpen === true) {
+    if (textLinesOpen === true) {                                                                // Text holders
         html += `
-                                                                        <!-- Text holders -->
         <section class="textBox-Dark textBox" id="TextLines">
             <div style="display: flex;">
                 <div style="width: 160px;">
@@ -233,9 +66,8 @@ function updateView() {
 
 
     
-    if (listsAndTablesOpen === true) {
+    if (listsAndTablesOpen === true) {                                                                // list
         html += `
-                                                                        <!-- list -->
         <section class="textBox-Dark textBox" id="listsTables">
             <div style="display: flex;">
                 <div style="width: 160px;">
@@ -305,10 +137,8 @@ function updateView() {
 
 
     
-    if (visualOpen === true) {
+    if (visualOpen === true) {                                                                // Visual
         html += `
-
-                                                                    <!-- Visual -->
         <section class="textBox-Dark textBox" id="visual">
             <div style="display: flex;">
                 <div style="width: 160px;">
@@ -363,10 +193,8 @@ function updateView() {
 
 
     
-    if (keyBindsOpen === true) {
+    if (keyBindsOpen === true) {                                                                // Key Binds
         html += `
-
-                                                                    <!-- Key Binds -->
         <section class="textBox-Dark textBox" id="keyBinds">
             <div style="display: flex;">
                 <div style="width: 160px;">
@@ -437,9 +265,8 @@ function updateView() {
 
 
 
-    if (functionalOpen === true) {
+    if (functionalOpen === true) {                                                                // Functional
         html += `
-                                                                    <!-- Functional -->
         <section class="textBox-Dark textBox" id="functional">
             <div style="display: flex;">
                 <div style="width: 160px;">
@@ -542,36 +369,177 @@ function updateView() {
 
 
 
-    /*
-    if (functionalOpen === true) {
+    
+    if (scriptsOpen === true) {                                                                // Scripts
         html += `
-                                                                    <!-- Scripts -->
-    <section class="textBox-Dark textBox" style="border-color: goldenrod;" id="script">
-        <div style="display: flex;">
-            <div style="width: 100%;">
-                <h2 class="textBoxTittle-Dark textBoxTittle">Scripts</h2>
-            </div> <!--
-            <div class="closeButton-Dark" onclick="colapseSectionScript()">
-                ↑
-            </div>  -->
+        <section class="textBox-Dark textBox" style="border-color: goldenrod;" id="script">
+            <div style="display: flex;">
+                <div style="width: 160px;">
+                    <h2 class="textBoxTittle-Dark textBoxTittle">Scripts</h2>
+                </div>
+                <div class="closeButton-Dark" onclick="colapseSectionScript()">
+                    ↑
+                </div>
+            </div>
+
+            <h2 class="textBoxText-Dark textBoxText" style="font-size: 30px;">Math</h2>
+
+<!-- Dice -->
+            <h3 class="textBoxText-Dark textBoxText">Random</h3>
+            <div class="sampleBox-Dark sampleBox">
+                <div class="numberBox-Dark">
+                    ${diceRollNum}
+                </div>
+                <button onclick="rollTheDice()">Roll the dice</button>
+            </div>
+            <br>
+
+<!-- Math -->
+            <h3 class="textBoxText-Dark textBoxText">add and subtract</h3>
+            <div class="sampleBox-Dark sampleBox">
+                <div class="numberBox-Dark">
+                    ${mathNum}
+                </div>
+                <button onclick="subOne()">subtract</button>
+                <input type="number" value="${inputNumber}" id="numberForMath" onchange="updateInputValue()">
+                <button onclick="addOne()">add</button>
+            </div>
+            <br>
+
+<!-- Gator Game -->
+            <h3 class="textBoxText-Dark textBoxText">add and subtract</h3>
+            <div class="sampleBox-Dark sampleBox">
+                <div style="display: flex;">
+                    <div class="numberBox-Dark">
+                        ${first_number}
+                    </div>
+                    <div class="numberBox-Dark">
+                        <input value="=" id="lessOrMore" style="text-align: center; font-size: 42px; width: 40%">
+                    </div>
+                    <div class="numberBox-Dark">
+                        ${second_number}
+                    </div>
+                </div>
+                <button onclick="isLessOrMore()">check</button><button onclick="gatorAgain()">reset</button>
+                <div class="numberBox-Dark">${gatorResultText}</div>
+            </div>
+            <br>
+
+
+<!-- background color changer -->
+            <h3 class="textBoxText-Dark textBoxText">background color</h3>
+            <div class="sampleBox-Dark sampleBox" id="backgroundBox">
+                <button id="colorSelectButton" onclick="backgoundChange()" style="background-color: ${selectedColor};" >select</button>
+                <br>
+                <div style="display: flex;">
+                    <div class="colorButton" style="background-color: yellow; color: yellow;" onclick="colorPicker('yellow')"></div>
+                    <div class="colorButton" style="background-color: cyan; color: cyan;" onclick="colorPicker('cyan')"></div>
+                    <div class="colorButton" style="background-color: red; color: red;" onclick="colorPicker('red')"></div>
+                    <div class="colorButton" style="background-color: rgb(33, 34, 39); color: rgb(33, 34, 39);" onclick="colorPicker('')"></div>
+                </div>
+            </div>
+            <br>
+
+
+
+<!-- Stoppeklokke --> 
+            <h3 class="textBoxText-Dark textBoxText">Stopwatch</h3>
+            <div class="sampleBox-Dark sampleBox">
+                <div class="numberBox-Dark">
+                    ${seconds} ${stopwatchSpelling}
+                </div>
+                <!-- <button>start</button> -->
+                <button onclick="startTimer()">start</button>
+                <button onclick="stopTimer()">stop</button>
+                <button onclick="resetTimer()">reset</button>
+            </div>
+            <br>
+
+
+
+<!-- Game -->
+        <h3 class="textBoxText-Dark textBoxText">fight game</h3>
+        <div class="sampleBox-Dark sampleBox">
+            ${fightGameScreen()}
+
+
         </div>
+        <br>
 
-        ${showScripts()}
 
-    </section>
-    <br>
-    <br>
+            
+<!-- Inventory -->
+            <h3 class="textBoxText-Dark textBoxText">Inventory</h3>
+            <div class="sampleBox-Dark sampleBox">
+                <div>
+                    ${showBagContents()}
+                </div>
+                <div class="numberBox-Dark" style="display: flex;">
+                    <br>
+                    <div class="item" id="red" style="border: solid rgb(148, 0, 0) 2px; background-color: red;" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
+                    <br>
+                    <div class="item" id="blue" style="border: solid rgb(0, 0, 148) 2px; background-color: rgb(54, 181, 255);" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
+                    <br>
+                    <div class="item" id="green" style="border: solid rgb(0, 121, 0) 2px; background-color: rgb(0, 255, 0);" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
+                    <br>
+                    <div class="item" id="yellow" style="border: solid rgb(131, 131, 0) 2px; background-color: yellow;" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
+                    <br>
+                </div>
+            </div>
+            <br>
+
+
+<!-- Trafic light -->
+        <h3 class="textBoxText-Dark textBoxText">Trafic light</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <button onclick="roadLightTimer = false">Off</button>
+            <button onclick="roadLightTimer = true">On</button>
+            <br>
+            <br>
+            <div style="width: 270px; height: 750px; border: solid black 3px; background-color: gray; border-radius: 200em;">
+                <div class="lights ${lightSequence[2]}" onclick="turnLightOn(2)"></div>
+
+                <div class="lights ${lightSequence[1]}" onclick="turnLightOn(1)"></div>
+                
+                <div class="lights ${lightSequence[0]}" onclick="turnLightOn(0)"></div>
+
+            </div>
+            <br>
+            <br>
+        </div>
+        <br>
+
+
+<!-- Magic 8 ball -->
+            <h3 class="textBoxText-Dark textBoxText">8 ball</h3>
+            <div class="sampleBox-Dark sampleBox">
+                <h3>Ask the magic 8 ball any question you would like</h3>
+                <div style="border: solid 2px black; background-color: black; width: 400px; height: 400px; border-radius: 100%;" ondblclick="shakeEightBall()">
+                    <div style="border: solid 2px blue; background-color: blue; width: 200px; height: 200px; border-radius: 100%; margin-top: 100px;">
+                        <br>
+                        <br>
+                        <div style="font-size: 36px; color: white">
+                            ${eightBallText}
+                        </div>
+                    </div>
+                </div>
+                <p>double click to activate</p>
+            </div>
+            <br>
+        </section>
+        <br>
+        <br>
     `
 
 
     } else {
         html += `
-        <section class="textBox-Dark textBox" id="functional">
+        <section class="textBox-Dark textBox" style="border-color: goldenrod;" id="script">
             <div style="display: flex;">
                 <div style="width: 160px;">
-                    <h2 class="textBoxTittle-Dark textBoxTittle">Functional</h2>
+                    <h2 class="textBoxTittle-Dark textBoxTittle">Scripts</h2>
                 </div>
-                <div class="closeButton-Dark" onclick="openSectionFunctional()">
+                <div class="closeButton-Dark" onclick="openSectionScript()">
                     ↓
                 </div>
             </div>
@@ -579,7 +547,7 @@ function updateView() {
         <br>
         `
     }
-    */
+    
 
 
 
@@ -592,3 +560,186 @@ function updateView() {
 
     mainPage.innerHTML = html
 }
+
+lightChange()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+                                                                    <!-- Scripts -->
+    <section class="textBox-Dark textBox" style="border-color: goldenrod;" id="script">
+        <div style="display: flex;">
+            <div style="width: 100%;">
+                <h2 class="textBoxTittle-Dark textBoxTittle">Scripts</h2>
+            </div> <!--
+            <div class="closeButton-Dark" onclick="colapseSectionScript()">
+                ↑
+            </div>  -->
+        </div>
+
+        <h2 class="textBoxText-Dark textBoxText" style="font-size: 30px;">Math</h2>
+        <!-- Dice -->
+        <h3 class="textBoxText-Dark textBoxText">Random</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div id="dice" class="numberBox-Dark">
+                10
+            </div>
+            <button onclick="rollTheDice()">Roll the dice</button>
+        </div>
+        <br>
+
+        <!-- Math -->
+        <h3 class="textBoxText-Dark textBoxText">add and subtract</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div id="math" class="numberBox-Dark">
+                1
+            </div>
+            <button onclick="subOne()">subtract</button>
+            <input type="number" id="numberForMath">
+            <button onclick="addOne()">add</button>
+        </div>
+        <br>
+
+        <!-- Gator Game -->
+        <h3 class="textBoxText-Dark textBoxText">add and subtract</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div style="display: flex;">
+                <div id="gatorOne" class="numberBox-Dark">
+                    1
+                </div>
+                <div class="numberBox-Dark">
+                    <input value=">" id="lessOrMore" style="text-align: center; font-size: 42px; width: 40%">
+                </div>
+                <div id="gatorTwo" class="numberBox-Dark">
+                    1
+                </div>
+            </div>
+            <button onclick="isLessOrMore()">check</button><button onclick="gatorAgain()">reset</button>
+            <div id="gatorResult" class="numberBox-Dark"></div>
+        </div>
+        <br>
+
+
+        <!-- background color changer -->
+        <h3 class="textBoxText-Dark textBoxText">background color</h3>
+        <div class="sampleBox-Dark sampleBox" id="backgroundBox">
+            <button id="colorSelectButton" onclick="backgoundChange()">select</button>
+            <br>
+            <div style="display: flex;">
+                <div class="colorButton" style="background-color: yellow; color: yellow;" onclick="colorPicker('yellow')"></div>
+                <div class="colorButton" style="background-color: cyan; color: cyan;" onclick="colorPicker('cyan')"></div>
+                <div class="colorButton" style="background-color: red; color: red;" onclick="colorPicker('red')"></div>
+                <div class="colorButton" style="background-color: rgb(33, 34, 39); color: rgb(33, 34, 39);" onclick="colorPicker('rgb(33, 34, 39)')"></div>
+            </div>
+        </div>
+        <br>
+
+        <!-- Stoppeklokke --> 
+        <h3 class="textBoxText-Dark textBoxText">Stopwatch</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div id="timer" class="numberBox-Dark">
+                0 seconds
+            </div>
+            <!-- <button>start</button> -->
+            <button onclick="startTimer()">start</button>
+            <button onclick="stopTimer()">stop</button>
+            <button onclick="resetTimer()">reset</button>
+        </div>
+        <br>
+
+        <!-- Game -->
+        <h3 class="textBoxText-Dark textBoxText">fight game</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div id="fightGame">
+                <p>Welcome User</p>
+                <div style="display: flex;">
+                    
+                </div>
+                <img src="duck.png" ondblclick="notSoSecretFight()">
+            </div>
+            <br>
+            <input id="inputName">
+            <button onclick="startGame()">Fight</button>
+        </div>
+        <br>
+        
+        <!-- Inventory -->
+        <h3 class="textBoxText-Dark textBoxText">Inventory</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <div>
+                <div id="bag" style="width: auto; height: auto; border: solid brown 2px; display: flex; width: 90%;">
+                    <div id="bagOptions" style="width: 15%;">
+                        <p onclick="openBag()">Open<br>bag</p>
+                    </div>
+                    <div id="bagInventory" style="display: grid; width: 85%; grid-template-columns: repeat(14, 40px);">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="numberBox-Dark" style="display: flex;">
+                <br>
+                <div class="item" id="red" style="border: solid rgb(148, 0, 0) 2px; background-color: red;" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
+                <br>
+                <div class="item" id="blue" style="border: solid rgb(0, 0, 148) 2px; background-color: rgb(54, 181, 255);" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
+                <br>
+                <div class="item" id="green" style="border: solid rgb(0, 121, 0) 2px; background-color: rgb(0, 255, 0);" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
+                <br>
+                <div class="item" id="yellow" style="border: solid rgb(131, 131, 0) 2px; background-color: yellow;" onclick="addItem(this.id)"><img src="duck.png" width="30px"></div>
+                <br>
+            </div>
+        </div>
+        <br>
+
+        <!-- Trafic light -->
+        <h3 class="textBoxText-Dark textBoxText">Trafic light</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <br>
+            <br>
+            <div style="width: 270px; height: 750px; border: solid black 3px; background-color: gray; border-radius: 200em;">
+                <div class="lights redLightOn" id="redLight" onclick="turnLightOn(redLight, 'redLightOn')"></div>
+
+                <div class="lights lightOff" id="yellowLight" onclick="turnLightOn(yellowLight, 'yellowLightOn')"></div>
+                
+                <div class="lights lightOff" id="greenLight" onclick="turnLightOn(greenLight, 'greenLightOn')"></div>
+
+            </div>
+            <br>
+            <br>
+        </div>
+        <br>
+
+
+        <!-- Magic 8 ball -->
+        <h3 class="textBoxText-Dark textBoxText">8 ball</h3>
+        <div class="sampleBox-Dark sampleBox">
+            <h3>Ask the magic 8 ball any question you would like</h3>
+            <div style="border: solid 2px black; background-color: black; width: 400px; height: 400px; border-radius: 100%;" ondblclick="shakeEightBall()">
+                <div style="border: solid 2px blue; background-color: blue; width: 200px; height: 200px; border-radius: 100%; margin-top: 100px;">
+                    <br>
+                    <br>
+                    <div id="eightBallText" style="font-size: 36px; color: white">8</div>
+                </div>
+            </div>
+            <p>double click to activate</p>
+        </div>
+        <br>
+    </section>
+    <br>
+    <br>
+*/
